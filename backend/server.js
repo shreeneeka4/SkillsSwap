@@ -22,7 +22,12 @@ app.use(express.json());
 app.get("/api/health", (req, res) => {
   res.json({ status: "ok", service: "skillswap-backend" });
 });
-
+app.get("/", (req, res) => {
+  res.json({
+    message: "SkillSwap API is running",
+    status: "success"
+  });
+});
 // --- Routes ---
 app.use("/api/users", usersRouter);
 app.use("/api/skills", skillsRouter);
